@@ -123,6 +123,12 @@ $(document).ready(function () {
           numCorrect++;
 
           answerContainers[i].style.color = 'green';
+          if(numCorrect===7){
+            alert("All The Answer Correct Great Work");
+          }
+          else{
+            alert("Try again till you get correct answer");
+          }
         }
         else {
           answerContainers[i].style.color = 'red';
