@@ -116,18 +116,13 @@ $(document).ready(function () {
       var numCorrect = 0;
 
       for (var i = 0; i < questions.length; i++) {
-          if(numCorrect === 7){
-            alert("All The Answer Correct Great Work");
-          }
-          else{
-            alert("Try again till you get correct answer");
-          }
+         
 
         userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
 
         if (userAnswer === questions[i].correctAnswer) {
           numCorrect++;
-
+          submitButton(numCorrect);
           answerContainers[i].style.color = 'green';
         }
         else {
@@ -143,7 +138,13 @@ $(document).ready(function () {
         
 
     showQuestions(questions, quizContainer);
-    submitButton.onclick = function () {
+    submitButton.onclick = function (numCorrect) {
+       if(numCorrect === 7){
+            alert("All The Answer Correct Great Work");
+          }
+          else{
+            alert("Try again till you get correct answer");
+          }
       showResults(questions, quizContainer, resultsContainer);
     }
   }
