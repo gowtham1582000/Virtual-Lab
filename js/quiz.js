@@ -128,7 +128,7 @@ $(document).ready(function () {
           answerContainers[i].style.color = 'red';
         }
       }
-      if(numCorrect == 7){
+      if(numCorrect === 7){
             alert("All The Answer Correct Great Work");
           }
           else{
