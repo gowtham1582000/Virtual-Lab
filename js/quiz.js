@@ -116,6 +116,12 @@ $(document).ready(function () {
       var numCorrect = 0;
 
       for (var i = 0; i < questions.length; i++) {
+          if(numCorrect === 7){
+            alert("All The Answer Correct Great Work");
+          }
+          else{
+            alert("Try again till you get correct answer");
+          }
 
         userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
 
@@ -128,12 +134,7 @@ $(document).ready(function () {
           answerContainers[i].style.color = 'red';
         }
       }
-      if(numCorrect === 7){
-            alert("All The Answer Correct Great Work");
-          }
-          else{
-            alert("Try again till you get correct answer");
-          }
+    
 
       resultsContainer.innerHTML = 'You got '+ numCorrect + ' out of ' + questions.length;
       
