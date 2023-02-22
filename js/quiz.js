@@ -128,15 +128,17 @@ $(document).ready(function () {
           answerContainers[i].style.color = 'red';
         }
       }
-
-      resultsContainer.innerHTML = 'You got '+ numCorrect + ' out of ' + questions.length;
-    }
-       if(numCorrect == 7){
+      if(numCorrect == 7){
             alert("All The Answer Correct Great Work");
           }
           else{
             alert("Try again till you get correct answer");
           }
+
+      resultsContainer.innerHTML = 'You got '+ numCorrect + ' out of ' + questions.length;
+      
+    }
+       
         
 
     showQuestions(questions, quizContainer);
